@@ -6,18 +6,27 @@ package es.unileon.prg.date;
 
 */
 
-public class Date extends throws DateException {
+public class Date{
 
-	private int year; //Aqui se pondrán los valores?
+	private int year; 
 	private int month;
 	private int day;
+	Check checkeo = new Check();
 
+	public Date(){
+
+		//?*
+		this.day = 1;
+		this.month = 1;
+		this.year = 2016;
+
+
+	}
 
 	//Need2Fill
 
-	public boolean isSameYear(Date aux) {
+	public boolean isSameYear() {
 
-	return (this.year == aux.get)
 
 	}
 
@@ -36,14 +45,11 @@ public class Date extends throws DateException {
 
 	}
 
-	// Lo siguiente recibe parametros?
 
 	public Date (int today, int month, int year){
 
 
-		this.day = day;
-		this.month = month;
-		this.year = year;
+		
 
 	}
 
@@ -51,36 +57,73 @@ public class Date extends throws DateException {
 
 	public int getDay(){
 
-		return this.Day;
+		return day;
 	}
 
 	public int getMonth(){
 
-		return this.Month;
+		return month;
 	}
 
 	public int getYear(){
 
-		return this.Year;
+		return year;
 	}
 
-	// Go 4 sets (Sure...)
+	public void setDay(int day){
 
-	public void setDay(int Day){
+		try{
 
-		this.day = day;
+			checkeo.checkDay(day);
+		}catch (DateException mens){
+			System.err.println( mens );
+		}
+	} 
+
+	public void setMonth(int month){
+
+		try{
+
+			checkeo.checkMonth(month);
+		}catch (DateException mens){
+			System.err.println( mens );
+		}
+
 	}
 
-	public void setMonth(int Month){
+	public void setYear(int year){
+		try{
 
-		this.month = month;
+			checkeo.checkYear(year);
+		}catch (DateException mens){
+			System.err.println( mens );
+		}
 	}
 
-	public void setYear(int Year){
+	public Date tommorrow(){
+		 Date tomorrow = null;
+		 int d, m, y;
 
-		this.year = year;
+		 d = this.day;
+		 m = this.month;
+		 y = this,year;
+
+		 d++;
+
+		 if (checkeo.dayAndMonth(month) = false){
+		 	d = 1;
+		 	m++;
+		 	if ( m > 12){
+		 		y++;
+		 	}
+		 }
+
+		 try{
+		 	tomorrow = new Date (d,m,y);
+		 } catch (DateException msgt){
+		 	System.err.println("Error at tomorrow " + msgt );
+		 }
 	}
-
 
 
 

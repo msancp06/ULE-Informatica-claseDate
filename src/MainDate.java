@@ -12,9 +12,9 @@ public class MainDate{
 
 		//Copiado en clase teoria
 
-		Date today, tomorrow;
+		Date fecha, tomorrow;
 
-		today = new Date (21,3,2016);
+		fecha = new Date (21,3,2016);
 		tomorrow = new Date (22,3,2016);
 
 		today.isSameYear(tomorrow);
