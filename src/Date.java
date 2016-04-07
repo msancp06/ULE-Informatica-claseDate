@@ -15,9 +15,9 @@ public class Date extends throws DateException {
 
 	//Need2Fill
 
-	public boolean isSameYear() {
+	public boolean isSameYear(Date aux) {
 
-	return (this.year == )
+	return (this.year == aux.get)
 
 	}
 

@@ -25,7 +25,7 @@ public class Check {
 		return ((year > 0) && (year < 2016));
 	}
 
-	public boolean checkYear (){
+	public boolean checkDate (){
 
 		//Es probable que no funcione.
 		return (day.checkDay() && month.checkMonth() && year.checkYear());
