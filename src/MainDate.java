@@ -67,16 +67,16 @@ public class MainDate{
 	 [java] es.unileon.prg.date.DateException: es.unileon.prg.date.DateException: Day and month combination doesn't exist.
 	 Working, but I don't know why two DateExceptions are thrown.
 	*/
-     	checkDateMonthSeason = new Date (1,1,1);
-     	checkDateMonthSeason.setDate(1,1,2013);
+     	checkDateMonthSeason = new Date (31,12,2016);
+     	checkDateMonthSeason.setDate(30,6,2013);
      	int aux = 0;
-     	System.out.println(checkDateMonthSeason.toString()+"\n");
-     	System.out.println(checkDateMonthSeason.getMonthName());
-     	System.out.println(checkDateMonthSeason.getSeason()+"\n");
-     	checkDateMonthSeason.setMonth(6);
      	System.out.println(checkDateMonthSeason.toString());
      	System.out.println(checkDateMonthSeason.getMonthName());
-     	System.out.println(checkDateMonthSeason.getSeason());
+     	System.out.println(checkDateMonthSeason.getSeason()+"\n");
+     	checkDateMonthSeason.setMonth(11);
+     	System.out.println(checkDateMonthSeason.toString());
+     	System.out.println(checkDateMonthSeason.getMonthName());
+     	System.out.println(checkDateMonthSeason.getSeason() + "\n");
      /*
      [java] Day 23 Month 2 Year 5
      [java] Day 1 Month 1 Year 2013
@@ -90,9 +90,17 @@ public class MainDate{
      */
      //Working perfect
 
-     // Checking Random attempts with while statements:
+     // Checking getMonthUntilEnd
 
-     	System.out.println("Tries until I find the correct day (While) = " + checkDateMonthSeason.randomAttemptsWhile());
+     	System.out.println("Months until the end of the year: " + checkDateMonthSeason.getMonthsUntilEnd() + "\n");
+
+     // Checking Random attempts with while statements:
+     	Date date3;
+     	date3 = new Date (3,5,2051);
+
+     	System.out.println("For date = " + date3.toString());
+
+     	System.out.println("Tries until I find the correct day (While) = " + date3.randomAttemptsWhile());
      /*
      [java] Tries until I find the correct day (While) = 1563
      (This time luck is not with me)
@@ -101,7 +109,7 @@ public class MainDate{
 
      //Checking Random attempts with do while:
 
-     	System.out.println("Tries until I find the correct day (Do-While) = " + checkDateMonthSeason.randomAttemptsDoWhile() + "\n");
+     	System.out.println("Tries until I find the correct day (Do-While) = " + date3.randomAttemptsDoWhile() + "\n");
      
      /*
      [java] Tries until I find the correct day (While) = 21

@@ -205,6 +205,8 @@ public class Check {
 		if (mens.length() != 0) throw new DateException(mens.toString());
 	}
 
+	// To get how much day an specific month has.
+
 	public int getDaysInMonth (int month){
 		int daysOfMonth = 0;
 		switch(month){

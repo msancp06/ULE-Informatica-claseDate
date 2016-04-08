@@ -5,7 +5,7 @@ package es.unileon.prg.date;
  @author Manuel Sanchez Paniagua
  @version 1.0
 */
- 
+
 import java.util.Random;
 
 public class Date{
@@ -166,6 +166,8 @@ public class Date{
 		}
 	}
 
+	//********************** SWITCH ***********************************
+
 	public String getMonthName(){
 		StringBuffer name = new StringBuffer();
 		switch (this.month){
@@ -206,7 +208,7 @@ public class Date{
 			name.append("December");
 			break;
 			default:
-			name.append("Something went wrong. Program not working well.");
+			name.append("No months left.");
 			break;
 		}
 		return name.toString();
@@ -246,11 +248,16 @@ public class Date{
 		Date dateMonths = new Date(this.day, this.month, this.year);
 		StringBuffer months = new StringBuffer();
 
+		if (this.month == 12){
+
+		 months.append("No months left.");
+		}else{
 		for (int i = (this.month + 1) ; i < 13; i++ ){
 
 				dateMonths.setMonth(i);
 
-				months.append (dateMonths.getMonthName());
+				months.append (dateMonths.getMonthName() + " ");
+		}
 		}
 		return months.toString();
 	}
@@ -304,7 +311,7 @@ public class Date{
 		int monthRand = 0;
 		int attempts = 0;
 		Random rand = new Random();
-		int aux = checkeo.getDaysInMonth(month);
+		int aux = checkeo.getDaysInMonth(this.month);
 
 
 		do{
