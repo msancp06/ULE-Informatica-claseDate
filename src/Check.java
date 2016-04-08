@@ -1,9 +1,9 @@
 package es.unileon.prg.date;
 
 /*
-
-
-
+ Class check
+ @author Manuel Sanchez Paniagua
+ @version 1.0
 */
 
 public class Check {
@@ -203,6 +203,37 @@ public class Check {
 		}
 		*/
 		if (mens.length() != 0) throw new DateException(mens.toString());
+	}
+
+	public int getDaysInMonth (int month){
+		int daysOfMonth = 0;
+		switch(month){
+
+			case 2:
+			daysOfMonth = 29;
+			break;
+
+			case 4:
+			case 6:
+			case 9:
+			case 11:
+
+			daysOfMonth = 30;
+			break;
+			case 1:
+			case 3:
+			case 5:
+			case 7:
+			case 8:
+			case 10:
+			case 12:
+
+			daysOfMonth = 31;
+			break;
+
+		}
+		return daysOfMonth;
+		
 	}
 
 
