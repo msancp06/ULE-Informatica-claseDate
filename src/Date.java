@@ -122,6 +122,24 @@ public class Date{
 		}
 	}
 
+	public void setDate(int day, int month, int year){
+
+		try{
+			checkeo.checkDate(day, month, year);
+			this.day = day;	
+			this.month = month;
+			this.year = year;
+
+		}catch (DateException errormsg){
+			System.err.println(errormsg);
+		}
+	}
+	// To print some things...
+	public String toString(){
+
+		return "Day "+ day + " Month "+ month +" Year " + year;
+	}
+
 	public Date tommorrow(){
 		 Date tomorrow = null;
 		 int d, m, y;
@@ -141,6 +159,7 @@ public class Date{
 		 }
 		 return tomorrow;
 	}
+
 
 
 

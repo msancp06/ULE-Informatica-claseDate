@@ -142,18 +142,18 @@ public class Check {
 		StringBuffer mens = new StringBuffer();
 		if (day <= 0){
 
-			mens.append("Negative days are not accepted. Set Day again. ");
+			mens.append("Negative days are not accepted. Set Day again.\n ");
 
 		} else {
 
 			if (day > 31){
 
-				mens.append("Error at Day value. Day is up to 31.");
+				mens.append("Error at Day value. Day is up to 31.\n");
 			} else {
 
 				if (dayAndMonth(day,month) == false){
 
-					mens.append("Day and month combination doesn't exist.");
+					mens.append("Day and month combination doesn't exist.\n");
 				} 
 				/* Same error happened, cannot set day to this.day here, gotta do it at Date.java file
 				else{
@@ -173,12 +173,12 @@ public class Check {
 		StringBuffer mens = new StringBuffer();
 		if (month <= 0){
 
-				mens.append("Negative days are not accepted. Set Month again.");
+				mens.append("Negative month are not accepted. Set Month again.\n");
 			} else {
 
 				if (month > 12){
 
-					mens.append("Error at Month value. Month is up to 12.");
+					mens.append("Error at Month value. Month is up to 12.\n");
 				} 
 				/*Same here. nt.
 				else {
@@ -195,7 +195,7 @@ public class Check {
 		StringBuffer mens = new StringBuffer();
 		if (year < 0){
 
-				mens.append("Negative years are not accepted. Set Year again.");
+				mens.append("Negative years are not accepted. Set Year again.\n");
 		} 
 		/*Saaaaame here too...
 		else {
